@@ -10,6 +10,17 @@ void DisplayBoard(int** array){
        cout << endl;
     }
 }
+
+
+void PlaceMarker(int row, int col, int** new_array, bool player){
+    
+       if(player){ // player 1 is represented by True    
+           new_array[row][col] = 1;    
+       }
+       else{
+           new_array[row][col] = 2; // player 2 otherwise
+       }
+}
     
     
 int** CreateBoard(){
