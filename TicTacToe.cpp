@@ -1,19 +1,7 @@
 #include <iostream>
 using namespace std;
+static void PlaceMarker(int row, int col, int** new_array, bool player){
 
-// Initializes a new 2D array and returns it to main
-void DisplayBoard(int** array){
-    for(int i =0; i < 3;i++){
-       for(int j = 0;j < 3;j++){
-           cout << array[i][j] << " ";
-       }
-       cout << endl;
-    }
-}
-
-
-void PlaceMarker(int row, int col, int** new_array, bool player){
-    
        if(player){ // player 1 is represented by True    
            new_array[row][col] = 1;    
        }
@@ -21,9 +9,29 @@ void PlaceMarker(int row, int col, int** new_array, bool player){
            new_array[row][col] = 2; // player 2 otherwise
        }
 }
+static bool GetPlayerChoice(int** arr, bool pl){
+    int x, y;
+    bool get_player;
+    cout << "Enter your X spot: ";
+    cin >> x;
+    cout << "Enter your Y spot: ";
+    cin >> y;
+    cout << endl;
+    PlaceMarker(x, y, arr, pl);
+    pl = false;
+    return pl;
+}
+static void DisplayBoard(int** arr){
+    for(int i =0; i < 3;i++){
+       for(int j = 0;j < 3;j++){
+           cout << arr[i][j] << " ";
+       }
+       cout << endl;
+    }
+}
     
     
-int** CreateBoard(){
+static int** CreateBoard(){
 
       int** new_array = 0;
       new_array = new int*[3];
@@ -39,8 +47,26 @@ int** CreateBoard(){
 
 int main(){
 
-  int **array;
-  array = CreateBoard();
-  DisplayBoard(array);
-
+  int **arr;
+  arr = CreateBoard();
+  bool p;
+  for(int k = 0; k < 9; k++){
+    for(int i = 0;i < 3;i++){
+        for(int j = 0;j < 3;j++){
+            if(arr[i][j] == 0){
+                p = GetPlayerChoice(arr, true);
+                DisplayBoard(arr);
+                if(!p){
+                    GetPlayerChoice(arr, p);//mess around wit the bool here
+                }
+            }
+            else{
+                DisplayBoard(arr);
+                return 0;
+            }
+        }
+    }
+  }
+  return 0;
 }
+
