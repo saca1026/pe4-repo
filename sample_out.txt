@@ -1,0 +1,33 @@
+Enter your X spot: 1
+Enter your Y spot: 2
+
+0 0 0 
+0 0 1 
+0 0 0 
+Enter your X spot: 2
+Enter your Y spot: 2
+
+0 0 0 
+0 0 1 
+0 0 2 
+Enter your X spot: 0
+Enter your Y spot: 0
+
+1 0 0 
+0 0 1 
+0 0 2 
+Enter your X spot: 1
+Enter your Y spot: 0
+
+1 0 0 
+2 0 1 
+0 0 2 
+Enter your X spot: 0
+Enter your Y spot: 2
+
+1 0 1 
+2 0 1 
+0 0 2 
+1 0 1 
+2 0 1 
+0 0 2
