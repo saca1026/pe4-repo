@@ -69,6 +69,7 @@ int main(){
                 DisplayBoard(arr);
             }
             else{
+                cout << "Out of Moves" << endl;
                 DisplayBoard(arr);
                 return 0;
             }
